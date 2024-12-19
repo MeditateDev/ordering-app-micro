@@ -12,4 +12,9 @@ export class OrdersController {
   ){
     return this.ordersService.createOrder(request);
   }
+
+  @Get()
+  async getOrder(){
+    return this.ordersService.getOrder();
+  }
 }
