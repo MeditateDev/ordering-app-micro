@@ -17,13 +17,13 @@ import { BILLING_SERVICE } from './constant/service';
         MONGODB_URI: Joi.string().required(),
         PORT: Joi.number().required(),
       }),
-      envFilePath: './apps/orders/.env'
+      envFilePath: './apps/orders/.env',
     }),
     DatabaseModule,
-    MongooseModule.forFeature([{name: Order.name, schema: OrderSchema}]),
+    MongooseModule.forFeature([{ name: Order.name, schema: OrderSchema }]),
     RmqModule.register({
       name: BILLING_SERVICE,
-    })
+    }),
   ],
   controllers: [OrdersController],
   providers: [OrdersService, OrdersRepository],
